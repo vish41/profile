@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Form</title>
+	<style>
+		body
+		{
+			background: #e47200;
+		}
+		.login
+		{
+			background: white;
+			width: 60%;
+			height: fit-content;
+			margin:6% auto;
+			font-family: 'Stick No Bills', sans-serif;
+			text-align: center;
+			border-radius: 10px;
+		}
+		*
+		{
+			padding: 5px;
+			margin: auto;
+			transition:ease 0.7s;
+		}
+		input{
+			width: 80%;
+			border-radius: 10px;
+		}
+		.btn
+		{
+			width: 50%;
+			border-radius: 5px;
+		}
+		
+	</style>
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap" rel="stylesheet">
+</head>
+<body class="bg-secondary">
+
+	<div class="login">
+		<h1 style="text-decoration: underline;">Thanks for Visiting</h1>
+		<h2>What you Think About My Webpage </h2>
+		<form onsubmit="return formvalidation()">
+			<table class="w-100">
+				<tr><td>Please Fill  Valid Email-address.</td></tr>
+				<tr>
+					<td><input type="email" name="email" value="" placeholder="email@example.com" id="email">
+						<br><span id="uname" class="text-danger"></span>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="feedback" value="" placeholder="Your Feed Back"></td>
+				</tr>
+				<tr>
+					<td><input class="btn btn-info" href="about.html" type="submit"><a class="btn btn-danger" href="about.html">back</a></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+		<script>
+	
+			var checkemail;
+			var email=document.getElementById("email");
+			console.log(email);
+			function formvalidation()
+			{
+				if(email.value=="")
+				{
+					checkuser=false;
+					document.getElementById("uname").innerHTML="email can't be empty";	
+				}
+				else if(email.value.length<15)
+				{
+					checkemail=false;
+					document.getElementById("uname").innerHTML="email must be bigger that 14 chars";
+
+				}
+				else
+				{
+					checkemail=true;
+				}
+             if(checkemail == true)
+				return true
+			else
+				return false
+			}
+			
+	</script>
+</body>
+</html>
